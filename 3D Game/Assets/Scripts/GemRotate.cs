@@ -7,6 +7,8 @@ public class GemRotate : MonoBehaviour
     // Start is called before the first frame update
 
     public int RotateSpeed;
+    public AudioSource collectSound;
+    public GameObject gemPiece;
     void Start()
     {
         
@@ -16,5 +18,11 @@ public class GemRotate : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, RotateSpeed, 0, Space.World);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        collectSound.Play();
+        gemPiece.SetActive(false);
     }
 }
