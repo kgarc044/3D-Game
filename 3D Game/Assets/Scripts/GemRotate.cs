@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class GemRotate : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public int RotateSpeed;
-    public AudioSource collectSound;
-    public GameObject gemPiece;
-    void Start()
-    {
-        
-    }
+    public AudioSource CollectSound;
+    public GameObject TheGem;
 
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, RotateSpeed, 0, Space.World);
     }
-
-    private void OnTriggerEnter(Collider other)
+    /*
+    void OnTriggerEnter(Collider other)
     {
-        collectSound.Play();
-        gemPiece.SetActive(false);
+        CollectSound.Play();
+        TheGem.SetActive(false);
     }
+    */
 }
